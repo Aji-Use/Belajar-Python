@@ -21,7 +21,7 @@ print(a, 'x', b, '=', hasil)
 
 # Pembagian
 print("=" * 50)
-a = 10
+a = 11
 b = 5
 hasil = a / b
 print(a, '/', b, '=', hasil)
