@@ -10,6 +10,14 @@ print(f"Data 1 \t\t: {data_1}")
 print(f"Data group \t: {data_gorup}")
 
 
+# ====== Mengambil data dari nested list ======
+print("\n======= Mengambil data dari nested list =======")
+data = data_gorup[0][1]
+
+print(f"Nested list : {data_gorup}")
+print(f"Data yang diambil index ke-0 dari nested list(data_0) dan data index ke-1 dari data_0(2) : {data}")
+
+
 # ======= Contoh penggunaan =======
 print("\n======= Contoh penggunaan =======")
 pirates = ['luffy', 'zoro', 'sanji', 'usop']
