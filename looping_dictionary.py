@@ -48,3 +48,18 @@ for i in data_dic.values():
     print(f"{NUMBER} : {i}")
     NUMBER +=1
     
+# ---- Cara 4 (dengan items()) ----
+print("\n---- Cara 4 (dengan items()) ----")
+
+items = data_dic.items()
+print(items)
+
+# keluaran seperti data tuple
+for item in data_dic.items():
+    print(item)
+    
+# ---- Mengambil data key dan value dengan items() ----
+print("---- Mengambil data key dan value dengan items() ----")
+
+for key,value in data_dic.items():
+    print(f"{key} : {value}")
