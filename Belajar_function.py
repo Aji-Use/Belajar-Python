@@ -27,3 +27,17 @@ def tambah(angka_1,angka_2):
 
 HASIL = tambah(7,9) #akan mereturn hasil dari function tambah ke variabel HASIL
 print(tambah(5,7)) 
+
+print("---- Function dengan parameter lebih dari 1, dan cara mengambilnya ---")
+def tiga_parameter(nilai1,nilai2,nilai3):
+    hasil1 = nilai1**2
+    hasil2 = nilai2**2
+    hasil3 = nilai3**2
+    
+    return hasil1,hasil2,hasil3
+
+HASIL1,HASIL2,HASIL3 = tiga_parameter(2,4,6)
+
+print(HASIL1)
+print(HASIL2)
+print(HASIL3)
