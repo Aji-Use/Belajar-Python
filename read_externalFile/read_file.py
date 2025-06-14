@@ -34,32 +34,14 @@ print("\n--------Baca satu baris isi dari file--------")
 print(f"Ini adalah isi dari baris pertama file: {read_file.readline()}")
 
 
-# =========== Menulis File ============
-print("\n=========== Menulis File ============")
-
-write_file = open("file.txt", mode='w')
-
-# Cek Status file bisa ditulis atau tidak
-print("--------------- Cek Status file bisa ditulis atau tidak--------------")
-print(f"Apakah file bisa ditulis: {write_file.writable()}")
-
-# Menulis file
-# isi file sebelumnya akan hilang
-# print("--------Menulis File--------")
-# print(f"Menulis file: {write_file.write()}")
-
-
 # ========== Menutup File Secara Manual ===========
 # Manual dan TIDAK EFEKTIF
 print(f"Apakah read_file sudah ditutup: {read_file.closed}")
-print(f"Apakah write_file sudah ditutup: {write_file.closed}")
 
 # tutup file
 read_file.close()
-write_file.close()
 
 print(f"Apakah read_file sudah ditutup: {read_file.closed}")
-print(f"Apakah write_file sudah ditutup: {write_file.closed}")
 
 
 # Cara tepat menutup file adalah dengan perintah WITH
