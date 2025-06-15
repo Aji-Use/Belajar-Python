@@ -1,0 +1,3 @@
+Ini adalah file yang dibuat
+Ini adalah data ke 2 yang ditambahkan pada file_2.txt
+Ini adalah data ke 3 yang ditambahkan pada file_2.txt

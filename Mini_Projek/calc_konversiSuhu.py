@@ -53,9 +53,10 @@ def kelvin(suhu):
     
     print(f"Suhu Kelvin ke Celcius \t: {celcius} C")
     print(f"Suhu Kelvin ke Reamur \t: {reamur} R")
-
+    
+    
+# interface
 satuan_suhu = input("Masukkan satuan suhu awal yang ingin dikonversi: ").lower()
-
 
 if satuan_suhu == "c":
     print("Celcius")

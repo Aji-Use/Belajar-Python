@@ -19,16 +19,15 @@ while True:
     for index, buku in enumerate(list_buku):
         print(f"No\t\t: {index+1}\nJudul Buku\t: {buku[0]}\nPenulis\t\t: {buku[1]}")
         print("_"*40)
+
         
-    
     while True:
         next_input = input("Lanjut input buku (y/n):  ").lower()
         
         if next_input in ['y', 'n']:
             break
         print("Masukkan jawaban dengan benar! (y/n)")
-
-        
+ 
     if next_input == 'n':
         break 
 

@@ -1,5 +1,5 @@
 from database import database 
-from . import view
+
 import time
 import random
 import string
@@ -10,6 +10,26 @@ def random_string(lenth):
     pk = "".join(random.choice(char) for i in range(lenth))
     
     return pk
+
+
+# update data
+def update_data(no_buku,pk,judul,penulis,thn_terbit,waktu_input):
+    DATA = database.TEMPLATE.copy()
+
+    DATA["pk"] = pk
+    DATA["judul"] = judul + database.TEMPLATE["judul"][len(judul):]
+    DATA["penulis"] = penulis + database.TEMPLATE["penulis"][len(penulis):]
+    DATA["tahun_terbit"] = thn_terbit
+    DATA["waktu_input"] = waktu_input
+    
+    result = f"{DATA['pk']}, {DATA['judul']}, {DATA['penulis']}, {DATA['tahun_terbit']}, {DATA['waktu_input']}"
+    length = len(result)
+    try:
+        with open(database.DATABASE, 'r+', encoding='utf-8') as data:
+            data.seek(length * (no_buku-1))
+            data.write(result)
+    except Exception as e:
+        print(f"Gagal melakukan update: {e}")
 
 # function create database
 def create_data():
@@ -36,14 +56,23 @@ def create_data():
    
    
 # Function read data backend
-def read():
+def read(**kwargs):
     try:
         with open(database.DATABASE, 'r') as data:
-            file = data.readlines()
-            return file
-    except:
-        print("Data gagal ditampilkan")
-        
+            content = data.readlines()
+            jumlah_buku = len(content)
+            
+            if "index" in kwargs:
+                index_buku = kwargs["index"]-1
+                
+                if index_buku < 0 or index_buku > jumlah_buku:
+                    return False
+                else:
+                    return content[index_buku]
+            else: 
+                return content
+    except Exception as e:
+        print(f"Data gagal ditampilkan: {e}")    
 
 
 def add(judul,penulis,thn_terbit):
@@ -56,11 +85,10 @@ def add(judul,penulis,thn_terbit):
     DATA["waktu_input"] = time.strftime("%Y-%m-%d | %H-%M-%S%z", time.gmtime())
     
     result = f"{DATA['pk']}, {DATA['judul']}, {DATA['penulis']}, {DATA['tahun_terbit']}, {DATA['waktu_input']}\n"
-    print(result)
+  
     try:
         with open(database.DATABASE, 'a', encoding='utf-8') as data:
             data.write(result)
-            
     except Exception as e:
         print(f"Data gagal ditambahkan: {e}")
         

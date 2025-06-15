@@ -48,6 +48,7 @@ print(f"Apakah read_file sudah ditutup: {read_file.closed}")
 # === Contoh dengan with ====
 
 # Dengan cara ini file akan MEMBUKA DAN MENUTUP OTOMATIS
+
 with open("file1.txt", "r") as read_file:
     # Reset pointer ke awal (jika perlu)
     lines = read_file.readlines()
